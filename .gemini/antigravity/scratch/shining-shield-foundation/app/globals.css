@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand Colors */
+  --color-primary: #0033A0;
+  /* Deep Royal Blue */
+  --color-primary-light: #2554C7;
+  --color-secondary: #001f3f;
+  /* Dark Navy */
+  --color-accent: #FFC72C;
+  /* Gold */
+  --color-accent-hover: #E5B000;
+
+  --background: #ffffff;
+  --foreground: #0f172a;
+  /* Slate 900 */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--color-primary);
+  --color-primary-light: var(--color-primary-light);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+  --color-accent-hover: var(--color-accent-hover);
+
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-poppins);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Keeping the site light-themed for now as requested for "presidential" look, 
+       typically light backgrounds are more traditional/official. 
+       But defining dark mode vars just in case, though defaulting to light. */
+    --background: #ffffff;
+    --foreground: #0f172a;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
